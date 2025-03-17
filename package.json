@@ -1,0 +1,28 @@
+{
+    "name": "career-mentorship-advisor",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A chat-based mentorship advisor for students",
+    "scripts": {
+      "dev": "netlify dev",
+      "build": "echo 'No build step required for a static site'",
+      "start": "netlify dev",
+      "lint": "echo 'No linting configured for static site'"
+    },
+    "keywords": [
+      "career",
+      "mentorship",
+      "chatbot",
+      "ai"
+    ],
+    "author": "Divya Singh",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+      "netlify-cli": "^15.0.0",
+      "autoprefixer": "^10.4.20",
+      "postcss": "^8.4.21",
+      "tailwindcss": "^3.4.17"
+    }
+  }
+  
