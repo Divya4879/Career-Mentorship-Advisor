@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career & Mentorship Advisor</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: 'hsl(140 50% 50%)', // Vibrant green
+                foreground: 'hsl(140 55% 10%)', // Deep green foreground
+              },
+              secondary: {
+                DEFAULT: 'hsl(145 35% 20%)', // Darker green for contrast
+                foreground: 'hsl(140 40% 98%)', // Light green text
+              },
+              border: 'hsl(140 30% 70%)', // Softer green for borders
+              input: 'hsl(140 30% 75%)', // Light green input background
+              ring: 'hsl(140 80% 35%)', // Bold green ring
+              background: 'hsl(140 40% 96%)', // Subtle green background
+              foreground: 'hsl(140 85% 10%)', // Dark green text
+              card: {
+                DEFAULT: 'hsl(140 40% 94%)', // Light green card
+                foreground: 'hsl(140 85% 15%)', // Deep green text
+              },
+              muted: {
+                DEFAULT: 'hsl(140 30% 85%)', // Muted green
+                foreground: 'hsl(140 20% 35%)', // Softer green foreground
+              },
+              accent: {
+                DEFAULT: 'hsl(140 40% 75%)', // Medium green for accents
+                foreground: 'hsl(140 50% 15%)', // Darker accent foreground
+              },
+              destructive: {
+                DEFAULT: 'hsl(0 84% 60%)', // Keeping red for warnings/errors
+                foreground: 'hsl(140 40% 98%)',
+              },
+              popover: {
+                DEFAULT: 'hsl(140 40% 94%)', // Light green popover
+                foreground: 'hsl(140 85% 10%)', // Dark green text
+              },
+            },
+            borderRadius: {
+              lg: 'var(--radius)',
+              md: 'calc(var(--radius) - 2px)',
+              sm: 'calc(var(--radius) - 4px)',
+            },
+          },
+        },
+      };
+      
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+
+  <header class="p-4 border-b border-gray-800">
+    <img src="images/download (3).png" alt="header-image" class="w-[100vw] h-[36vh] object-cover object-centre">
+    <div class="container mx-auto">
+      
+        <h1 class="text-7xl font-bold m-8 text-center text-green-300">Career & Mentorship Advisor</h1>
+
+    </div>
+  </header>
+
+  <main class="flex-1 container mx-auto p-4 flex flex-col">
+    <div id="chat-container" class="flex-1 overflow-y-auto space-y-4 mb-4 p-2">
+      <div class="chat-message ai-message">
+        <div class="bg-green-900 text-3xl italic font-bold text-white rounded-lg p-4 shadow-md">
+            <p class="text-xl italic font-bold">
+              Welcome. I am your Career Mentorship Advisor, committed to offering bespoke guidance throughout your professional journey. Whether you seek refined expertise in crafting an exceptional resume, strategic insights for job applications, or informed counsel on academic pursuits, I am here to empower your ambitions. How may I assist you in achieving your next significant milestone?
+            </p>
+          </div>
+          
+      </div>
+      <!-- Chat messages will be displayed here -->
+    </div>
+    
+    <div class="relative w-4/5 mx-auto">
+        <form id="chat-form" class="flex">
+          <input 
+            id="user-input" 
+            type="text" 
+            placeholder="Type your message here..." 
+            class="flex-1 bg-green-900 border border-green-700 rounded-l-lg p-3 focus:outline-none focus:border-green-500 transition duration-200"
+            required
+          >
+          <button 
+            type="submit" 
+            class="bg-green-600 hover:bg-green-700 text-white px-4 rounded-r-lg transition duration-200 flex items-center justify-center"
+          >
+            <span>Send</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+        <div id="loading-indicator" class="hidden absolute inset-y-0 right-0 pr-12 flex items-center">
+          <div class="animate-spin rounded-full h-5 w-5 border-t-2 border-green-500"></div>
+        </div>
+      </div>
+      
+      
+      <footer class="p-4 border-t border-green-800 text-center text-sm text-green-500">
+        <p>Career Mentorship Advisor - Built with 💖 by <a href="https://x.com/DivsinghDev" target="_blank" class="text-green-300">Divya</a> & ☕☕ and powered by Groq AI. </p>
+      </footer>
+      
+
+  <script src="app.js"></script>
+</body>
+</html>
+
