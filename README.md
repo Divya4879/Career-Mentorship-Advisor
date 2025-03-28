@@ -4,7 +4,7 @@
 Career Mentorship Advisor is a web-based platform designed to provide personalized career guidance, resume optimization tips, and academic advice to help individuals secure their dream jobs. This project leverages AI to offer tailored insights, making career planning more effective and accessible.
 
 ## Live Demo
-[Visit the Career Mentorship Advisor](https://career-mentorship-advisor.netlify.app)
+Visit the Career Mentorship Advisor [here](https://career-mentorship-advisor.netlify.app)
 
 ## Features
 - **Personalized Career Guidance**: Tailored mentorship based on user queries.
@@ -23,7 +23,7 @@ Career Mentorship Advisor is a web-based platform designed to provide personaliz
 ## Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/career-mentorship-advisor.git
+   git clone https://github.com/Divya4879/career-mentorship-advisor.git
    ```
 2. Navigate to the project folder:
    ```sh
