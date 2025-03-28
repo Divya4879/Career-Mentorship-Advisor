@@ -1,6 +1,5 @@
-// Netlify function to proxy requests to Groq API
 exports.handler = async (event, context) => {
-    // Only allow POST requests
+    
     if (event.httpMethod !== "POST") {
       return {
         statusCode: 405,
@@ -9,7 +8,7 @@ exports.handler = async (event, context) => {
     }
   
     try {
-      // Parse the incoming request
+    
       const body = JSON.parse(event.body);
       const userMessage = body.message;
   
@@ -20,7 +19,6 @@ exports.handler = async (event, context) => {
         };
       }
   
-      // Get the Groq API key from environment variables
       const apiKey = process.env.GROQ_API_KEY;
       if (!apiKey) {
         console.error("GROQ_API_KEY is not set");
@@ -29,8 +27,7 @@ exports.handler = async (event, context) => {
           body: JSON.stringify({ error: "API key not configured" }),
         };
       }
-  
-      // Make request to Groq API
+
       const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -38,12 +35,12 @@ exports.handler = async (event, context) => {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "llama3-70b-8192", // You can change the model as needed
+          model: "llama3-70b-8192", 
           messages: [
             {
               role: "system",
               content:
-                "You are an internationally acclaimed career mentor and advisor who specializes in helping students as well as even professionals secure their dream roles at top companies. Provide dynamic, personalized guidance that covers career paths, resume optimization, interview strategies, and skill development. Additionally, empower students to confidently showcase their ambitions by bragging about their target job or company—highlighting why they are the perfect fit, how their unique strengths align with industry trends, and what sets them apart in a competitive market. Your advice should be clear, actionable, and inspiring. **IMPORTANT:** Format your response using markdown with proper headings, numbered points, and code blocks where appropriate."
+                "You are an internationally acclaimed career mentor and advisor who specializes in helping students as well as even professionals secure their dream roles at top companies. Provide dynamic, personalized guidance that covers career paths, resume optimization, interview strategies, and skill development(mention the latest resources, and focus on documentation, papers and blogs). Additionally, empower students to confidently showcase their ambitions by bragging about their target job or company—highlighting why they are the perfect fit, how their unique strengths align with industry trends, and what sets them apart in a competitive market. Your advice should be clear, actionable, and inspiring. **IMPORTANT:** Format your response using markdown with proper headings, numbered points, and code blocks where appropriate."
             },
             {
               role: "user",
@@ -67,9 +64,9 @@ exports.handler = async (event, context) => {
       const data = await response.json();
       const aiResponse = data.choices[0].message.content;
   
-      // Remove all markdown formatting markers (### and **)
+      
       const cleanedResponse = aiResponse.replace(/###/g, '').replace(/\*\*/g, '');
-      // Wrap the cleaned response in an <h2> tag
+    
       const formattedResponse = `${cleanedResponse.trim()}`;
   
       return {
@@ -86,4 +83,3 @@ exports.handler = async (event, context) => {
       };
     }
   };
-  

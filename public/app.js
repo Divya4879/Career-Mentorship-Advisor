@@ -1,24 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM elements
+    
     const chatForm = document.getElementById("chat-form")
     const userInput = document.getElementById("user-input")
     const chatContainer = document.getElementById("chat-container")
     const loadingIndicator = document.getElementById("loading-indicator")
-  
-    // Load chat history from localStorage if it exists
+
     const loadChatHistory = () => {
       const history = localStorage.getItem("chatHistory")
       if (history) {
         chatContainer.innerHTML = history
       }
     }
-  
-    // Save chat history to localStorage
+
     const saveChatHistory = () => {
       localStorage.setItem("chatHistory", chatContainer.innerHTML)
     }
-  
-    // Add a message to the chat
+
     const addMessage = (message, isUser = false) => {
       const messageDiv = document.createElement("div")
       messageDiv.className = `chat-message ${isUser ? "user-message" : "ai-message"} fade-in`
@@ -33,28 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
       innerDiv.appendChild(messagePara)
       messageDiv.appendChild(innerDiv)
       chatContainer.appendChild(messageDiv)
-  
-      // Scroll to bottom
       chatContainer.scrollTop = chatContainer.scrollHeight
   
-      // Save to localStorage
       saveChatHistory()
     }
   
-    // Show loading indicator
     const showLoading = () => {
       loadingIndicator.classList.remove("hidden")
       userInput.disabled = true
     }
-  
-    // Hide loading indicator
+
     const hideLoading = () => {
       loadingIndicator.classList.add("hidden")
       userInput.disabled = false
       userInput.focus()
     }
-  
-    // Send message to Netlify Function
+
     const sendMessage = async (message) => {
       try {
         showLoading()
@@ -87,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // Handle form submission
     chatForm.addEventListener("submit", (e) => {
       e.preventDefault()
       const message = userInput.value.trim()
@@ -98,10 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
         sendMessage(message)
       }
     })
-  
-    // Clear chat history button
+ 
     const addClearButton = () => {
-      const footer = document.querySelector("footer")
       const clearBtn = document.createElement("button")
       clearBtn.textContent = "Clear Chat History"
       clearBtn.className = "mt-2 text-xs text-teal-400 hover:text-teal-300"
@@ -109,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
       clearBtn.addEventListener("click", () => {
         if (confirm("Are you sure you want to clear the chat history?")) {
           localStorage.removeItem("chatHistory")
-          // Keep only the initial greeting message
           chatContainer.innerHTML = `
             <div class="chat-message ai-message">
               <div class="bg-gray-800 rounded-lg p-4 shadow-md">
@@ -120,13 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
   
-      footer.appendChild(clearBtn)
+      chatContainer.appendChild(clearBtn)
     }
-  
-    // Initialize the chat
+
     loadChatHistory()
     addClearButton()
-  
-    // Focus the input field on load
+
     userInput.focus()
   })

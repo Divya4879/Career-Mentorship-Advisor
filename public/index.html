@@ -12,45 +12,45 @@
         theme: {
           extend: {
             colors: {
-              primary: {
-                DEFAULT: 'hsl(140 50% 50%)', // Vibrant green
-                foreground: 'hsl(140 55% 10%)', // Deep green foreground
-              },
-              secondary: {
-                DEFAULT: 'hsl(145 35% 20%)', // Darker green for contrast
-                foreground: 'hsl(140 40% 98%)', // Light green text
-              },
-              border: 'hsl(140 30% 70%)', // Softer green for borders
-              input: 'hsl(140 30% 75%)', // Light green input background
-              ring: 'hsl(140 80% 35%)', // Bold green ring
-              background: 'hsl(140 40% 96%)', // Subtle green background
-              foreground: 'hsl(140 85% 10%)', // Dark green text
-              card: {
-                DEFAULT: 'hsl(140 40% 94%)', // Light green card
-                foreground: 'hsl(140 85% 15%)', // Deep green text
-              },
-              muted: {
-                DEFAULT: 'hsl(140 30% 85%)', // Muted green
-                foreground: 'hsl(140 20% 35%)', // Softer green foreground
-              },
-              accent: {
-                DEFAULT: 'hsl(140 40% 75%)', // Medium green for accents
-                foreground: 'hsl(140 50% 15%)', // Darker accent foreground
-              },
-              destructive: {
-                DEFAULT: 'hsl(0 84% 60%)', // Keeping red for warnings/errors
-                foreground: 'hsl(140 40% 98%)',
-              },
-              popover: {
-                DEFAULT: 'hsl(140 40% 94%)', // Light green popover
-                foreground: 'hsl(140 85% 10%)', // Dark green text
-              },
-            },
-            borderRadius: {
-              lg: 'var(--radius)',
-              md: 'calc(var(--radius) - 2px)',
-              sm: 'calc(var(--radius) - 4px)',
-            },
+  primary: {
+    DEFAULT: 'hsl(140, 60%, 60%)', 
+    foreground: 'hsl(140, 60%, 95%)', 
+  },
+  secondary: {
+    DEFAULT: 'hsl(145, 40%, 30%)', 
+    foreground: 'hsl(140, 40%, 90%)', 
+  },
+  border: 'hsl(140, 30%, 40%)', 
+  input: 'hsl(140, 30%, 35%)', 
+  ring: 'hsl(140, 80%, 50%)', 
+  background: 'hsl(140, 20%, 10%)', 
+  foreground: 'hsl(140, 85%, 95%)', 
+  card: {
+    DEFAULT: 'hsl(140, 30%, 20%)', 
+    foreground: 'hsl(140, 85%, 90%)', 
+  },
+  muted: {
+    DEFAULT: 'hsl(140, 20%, 30%)', 
+    foreground: 'hsl(140, 20%, 80%)', 
+  },
+  accent: {
+    DEFAULT: 'hsl(140, 40%, 50%)', 
+    foreground: 'hsl(140, 50%, 95%)', 
+  },
+  destructive: {
+    DEFAULT: 'hsl(0, 84%, 60%)', 
+    foreground: 'hsl(0, 84%, 95%)', 
+  },
+  popover: {
+    DEFAULT: 'hsl(140, 30%, 15%)', 
+    foreground: 'hsl(140, 85%, 90%)', 
+  },
+},
+borderRadius: {
+  lg: 'var(--radius)',
+  md: 'calc(var(--radius) - 2px)',
+  sm: 'calc(var(--radius) - 4px)',
+},
           },
         },
       };
@@ -61,7 +61,7 @@
 <body class="dark bg-gray-900 text-gray-100 min-h-screen flex flex-col">
 
   <header class="p-4 border-b border-gray-800">
-    <img src="images/download (3).png" alt="header-image" class="w-[100vw] h-[36vh] object-cover object-centre">
+    <img src="images/header-image.png" alt="header-image" class="w-[100vw] h-[36vh] object-cover object-centre">
     <div class="container mx-auto">
       
         <h1 class="text-7xl font-bold m-8 text-center text-green-300">Career & Mentorship Advisor</h1>
@@ -71,15 +71,14 @@
 
   <main class="flex-1 container mx-auto p-4 flex flex-col">
     <div id="chat-container" class="flex-1 overflow-y-auto space-y-4 mb-4 p-2">
-      <div class="chat-message ai-message">
-        <div class="bg-green-900 text-3xl italic font-bold text-white rounded-lg p-4 shadow-md">
-            <p class="text-xl italic font-bold">
-              Welcome. I am your Career Mentorship Advisor, committed to offering bespoke guidance throughout your professional journey. Whether you seek refined expertise in crafting an exceptional resume, strategic insights for job applications, or informed counsel on academic pursuits, I am here to empower your ambitions. How may I assist you in achieving your next significant milestone?
-            </p>
-          </div>
-          
+      <div class="chat-message ai-message mx-auto w-[100vw] object-cover object-centre">
+        <div class="bg-green-900 text-3xl mx-auto italic font-bold text-white rounded-lg p-4 shadow-md">
+          <p class="text-xl italic font-bold mx-auto text-center">
+            Welcome. I am your Career Mentorship Advisor, committed to offering bespoke guidance throughout your professional journey. Whether you seek refined expertise in crafting an exceptional resume, strategic insights for job applications, or informed counsel on academic pursuits, I am here to empower your ambitions. How may I assist you in achieving your next significant milestone?
+          </p>
+        </div>
+        
       </div>
-      <!-- Chat messages will be displayed here -->
     </div>
     
     <div class="relative w-4/5 mx-auto">

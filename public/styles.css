@@ -9,6 +9,7 @@
   body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
+      font-weight: bold;
   }
 
 
@@ -74,30 +75,26 @@
   .message-content {
     white-space: pre-wrap;
   }
-  
-  /* Add scrollbar styles */
+
   #chat-container::-webkit-scrollbar {
     width: 8px;
   }
   
   #chat-container::-webkit-scrollbar-track {
-    background: #10271b; /* Dark Green-Gray */
+    background: #10271b; 
   }
   
   #chat-container::-webkit-scrollbar-thumb {
-    background-color: #3a4f42; /* Muted Green-Gray */
+    background-color: #3a4f42; 
     border-radius: 20px;
   }
   
-  
-  /* Make sure code blocks don't overflow */
   pre {
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   
-  /* Animation for new messages */
   @keyframes fadeIn {
     from {
       opacity: 0;
